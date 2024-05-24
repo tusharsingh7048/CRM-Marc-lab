@@ -1,0 +1,59 @@
+{% extends "parent.html" %}
+
+{% block main %}
+
+<h2 style="color:black ; text-align: center;"> Registration form</h2>
+
+<form action="{% url 'crmapp:registration' %}" method="POST" class="form-group">
+    {%csrf_token%}
+    <table class="table" style="margin:auto;">
+        {% if msg %}
+        <p>{{msg}}</p>
+        {% endif %}
+        <tr>
+            <td>First Name</td>
+               <td> <input type="text" name="name"> </td>
+                <td>Second Name </td> 
+                <td><input type="text"</td>
+        </tr>
+
+ 
+        <tr><td>Select Gender</td>
+            <td> <input type="radio" name="gender" >Male
+            <input type="radio" name="gender" >  Female</td>
+        </tr>
+
+        <tr>
+            <td>Email Address</td>
+               <td> <input type="email" id="email" name="email"> </td>
+
+       <tr>
+                <td>Contact Number</td>
+                   <td> <input type="number" name="contactno"> </td>
+
+        <tr>
+            <td>Address</td>
+            <td>
+                <textarea name="address" cols="30" rows="4"></textarea>
+            </td>
+        </tr>
+     
+ 
+        <tr>
+            <td>Create password</td>
+               <td> <input type="password" id="password" name="password"> </td></tr>
+
+               <tr>
+                <td>Confirm password</td>
+                   <td> <input type="password" id="copassword" name="copassword"> </td></tr>       
+
+
+                   <tr>
+                    <td>
+                        <button type="submit" class="btn btn-success" style="text-align: center;" >Submit</button>
+                    </td>
+                   </tr>
+    </table>
+</form>
+
+{% endblock main %}  

@@ -1,0 +1,33 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">View Customers Orders</h1>  
+            <table class="table table-bordered" style="margin: auto;">
+
+                <tr>
+                    <th>Id</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Name</th>
+                    <th>Contact No</th>
+                    <th>Email Address</th>
+                    <th>Buy Date</th>
+                      {% for o in ord %} 
+                      <tr>
+                        <td>{{o.id}}</td>
+                        <td>{{o.productname}}</td>
+                        <td>{{o.price}}</td>
+                        <td>{{o.name}}</td>
+                        <td>{{o.contactno}}</td>
+                        <td>{{o.emailaddress}}</td>
+                        <td>{{o.buydate}}</td>
+
+                      </tr> 
+                      {% endfor %}
+                </tr>
+            </table> 
+              
+        </div>
+    </div>
+{% endblock body %}

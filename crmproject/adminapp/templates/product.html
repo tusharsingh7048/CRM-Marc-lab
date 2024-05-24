@@ -1,0 +1,66 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">Add products</h1>  
+            {% if msg %}
+            <p style="color: white;text-align:center;">{{msg}}</p> 
+            {%   endif%}
+            <form class="from-group" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table class="table text-light" style="margin: auto; width: 60%;">
+                    <tr>
+                        <td>
+                            Enter Product name
+                        </td>
+                        <td>
+                            <input type="text" name="productname" class="form-control text-light" required/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Enter Mfg Date
+                        </td>
+                        <td>
+                            <input type="date" name="mfgdate" class="form-control text-light" required/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Enter Exp Date
+                        </td>
+                        <td>
+                            <input type="date" name="expdate" class="form-control text-light" required/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Enter Price
+                        </td>
+                        <td>
+                            <input type="text" name="price" class="form-control text-light" required/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Select Product pic
+                        </td>
+                        <td>
+                            <input type="file" name="productpic" class="form-control text-light" required/>
+                        </td>
+                    </tr>
+                    <td></td>
+                    <td>
+                        <button type="submit" class="btn btn-success">
+
+                            Add Product
+                        </button>
+                    </td>
+                </table>
+            </form>
+        </div>
+       
+    </div>
+{% endblock body %}

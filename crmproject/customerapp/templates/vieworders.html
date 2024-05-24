@@ -1,0 +1,27 @@
+{% extends "customerparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">View Your Order</h1>   
+              <table class="table table-bordered" style="margin: auto;">
+
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Buy Date</th>
+                </tr>
+                {% for o in ord %}
+
+                <tr>
+                    <td>{{o.productname}}</td>
+                    <td>{{o.price}}</td>
+                    <td>{{o.buydate}}</td>
+                </tr>
+
+            {% endfor %}
+              </table>
+      
+      </div>
+
+    </div>
+{% endblock body %}

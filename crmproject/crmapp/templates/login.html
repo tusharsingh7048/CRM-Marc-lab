@@ -1,0 +1,62 @@
+{% extends "parent.html" %} 
+{% block main %}
+<script>
+  function validate() {
+    var userid = document.getElementById("userid");
+    var password = document.getElementById("password");
+    if (userid.value == "" || userid.value == null) {
+      alert("please enter userid");
+      userid.focus();
+    } else if (password.value == "" || password.value == null) {
+      alert("please enter password");
+      password.focus();
+    } else {
+      document.getElementById("frmlogin").submit();
+    }
+  }
+</script>
+<h2 style="color: red; text-align: center">this is login page</h2>
+{% if msg %}
+<p style="text-align: center">{{msg}}</p>
+{% endif %}
+<form
+  method="post"
+  class="form-group"
+  id="frmlogin"
+  onsubmit="event.preventDefault();validate();"
+>
+  {% csrf_token %}
+  <table class="table" style="margin: auto">
+    <tr>
+      <td>Enter the user id</td>
+      <td>
+        <input
+          type="text"
+          id="userid"
+          name="userid"
+          class="form-control"
+          placeholder="user id"
+        />
+      </td>
+    </tr>
+    <tr>
+      <td>Enter password</td>
+      <td>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="form-control"
+          placeholder="password"
+        />
+      </td>
+    </tr>
+
+    <tr>
+      <td></td>
+      <td><button type="submit" class="btn btn-primary">login</button></td>
+    </tr>
+  </table>
+</form>
+
+{% endblock main %}

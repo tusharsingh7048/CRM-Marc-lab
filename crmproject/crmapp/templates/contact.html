@@ -1,0 +1,46 @@
+{% extends "parent.html" %}
+
+{% block main %}
+<h2  style="text-align: center;">Enquiry Form</h2>
+{% if msg %}
+<p style="color: green; text-align: center;">{{msg}}</p>
+{% endif %}
+<form class="form-group" method="post">
+    {% csrf_token %}
+    <table class="table" style="margin:auto;">
+
+        <tr>
+            <td>Enter name</td>
+            <td><input type="text" name="name" class="form-control"></td>
+        </tr>
+
+        <tr>
+            <td>Email Address</td>
+               <td> <input type="email" name="emailaddress" class="form-control"> </td></tr>
+
+       <tr>
+                <td>Contact Number</td>
+                   <td> <input type="number" name="contactno" class="form-control"> </td>
+
+       </tr>
+       <tr>
+        <td>Subject</td>
+        <td><input type="text" name="subject" class="form-control"></td>
+    </tr>
+
+    <tr>
+        <td>Enter Message</td>
+        <td>
+            <textarea name="message" id="Address" cols="30" rows="4" class="form-control"></textarea>
+        </td>
+    </tr>
+ 
+<tr>
+
+    <td>
+        <button type="submit" style="text-align: center;">submit </button>
+    </td>
+</tr>
+    </table>
+</form>
+{% endblock main %}  

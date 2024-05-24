@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM</title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/style1.css' %}" rel="stylesheet" />
+    <link href="{% static 'js/bootstrap.bundle.js' %} " rel="stylesheet"/>
+</head>
+<body>
+    <div class="container1">
+        <div class="row bg-danger  text-light text-center"  >
+        <div class="col-sm-4">CONTACT NO : 9793075189</div>
+        <div class="col-sm-4">EMAIL : tusharssingh123@gmail.com</div>
+        <div class="col-sm-4">FOLLOW US:</div>
+        </div>
+        <div class="row nav1 " >
+            <nav class="navbar  navbar-expand-lg ">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="{% url 'index' %}">
+                    <img src="{% static 'images/logo.jpg' %}" width="50%" height="50%"/>
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse textcolor " id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                      <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="{% url 'crmapp:index' %}">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'crmapp:about' %}">About us</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'crmapp:registration' %}">Registration</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'crmapp:login' %}">Login</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'crmapp:contact' %}">Contact us</a>
+                      </li>
+                      
+                    </ul>
+                    <form class="d-flex" role="search">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                  </div>
+                </div>
+              </nav>
+        </div>  
+        
+        <div class="row mt-2" style="border: 1px solid gray;">
+          <!-- slider starts -->
+          <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{%static 'images/image1.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item active">
+                <img src="{%static 'images/image2.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item active">
+                <img src="{%static 'images/image3.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item active">
+                <img src="{%static 'images/image4.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <!-- slidder ends -->
+        </div>
+
+
+   <div class="row ">
+    <div class="col-sm-5" style="min-height: 300px;">
+    <!-- <h1>MARC LABORATORIES LIMITED</h1> -->
+
+   
+      <img src="{%static 'images/MARC-FULL-FOM.png' %}" width="100%" height="100%">
+
+    </div>
+    
+    <div class="col-sm-7" style="background-color: rgb(132, 218, 237);min-height: 300px;">
+    {% block main %}
+
+
+    {% endblock main %}
+    
+    </div>
+  </div>
+   
+ 
+   
+  
+
+      <div class="card text-center container1" style="margin: auto; padding: 0;">
+        <div class="card-header" style="background-color: rgba(235, 10, 10, 0.878);">
+          <h1 style="color: white;"><B>WHAT'S THIER!??</B></h1>
+        </div>
+        <div class="card-body">
+          <img src="{%static 'images/one.png' %}" width="100%" height="100%">
+        </div>
+        <div class="card-footer text-body-secondary" style="background-color: rgba(235, 10, 10, 0.878); height: 50px;">
+          
+        </div>
+      </div>
+
+      <!-- grid -->
+      
+      <div class="footer row" >
+
+        <div class="col-sm-3">
+          <ul>
+            <h3 style="font-weight: bold;">SHOPPING GUIDE</h3>
+            <li><a href=""></a>Your Account</li>
+            <li><a href=""></a>Blog</li>
+            <li><a href=""></a>FAQs</li>
+          </ul>
+        </div>
+        <div class="col-sm-3">
+
+          <ul>
+            <h3 style="font-weight: bold;">INFORMATION</h3>
+             <li><a href=""></a>Terms & Condition</li>
+             <li><a href=""></a>Privacy Policy</li>
+             <li><a href=""></a>Shipping Policy</li>
+           </ul>
+
+        </div>
+        <div class="col-sm-3">
+
+          <ul>
+            <h3 style="font-weight: bold;">Information </h3>
+             <li><a href=""></a>About us</li>
+             <li><a href=""></a>Contact us</li>
+             <li><a href=""></a>Our Mission</li>
+             <li><a href=""></a>Infrastructure</li>
+             <li><a href=""></a>Kidney stone medicine</li>
+           </ul>
+
+        </div>
+        <div class="col-sm-3">
+
+          <ul>
+            <h3 style="font-weight: bold;">Address</h3>
+             <li><a href=""></a>3072/41, Gola market, Darya Ganj, DELHI-110002, India.</li>
+             <li><a href=""></a>+919076608818, +918081343990 <br>
+              Tollfree no: 18008892101 <br>
+              info@marccure.com</li>
+             <li><a href=""></a>Socials Icons</li>
+           </ul>
+        </div>
+
+      </div>
+
+      <!-- grid -->
+
+
+      <div class="row">
+       <div class="col-sm-6" style="background-color: black;color: white;text-align: center; font-size: 35px;">
+    copyright &copy; To MARC Lab</div>
+    <div class="col-sm-6" style="background-color: navy;color: white;text-align: center; font-size: 35px;">
+      Developed By:- Tushar singh</div>
+      </div>
+   
+</div>
+    <script src="{% static 'js/bootstrap.bundle.js' %}" ></script>
+</body>
+</html>

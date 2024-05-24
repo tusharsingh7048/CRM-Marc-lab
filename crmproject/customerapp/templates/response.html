@@ -1,0 +1,46 @@
+{% extends "customerparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">submit your feedback/complaint</h1> 
+            {% if msg %}
+            <p style="text-align: center;color: white;">{{msg}}</p>
+            {% endif %}
+            <form class="from-group" method="post">
+                {% csrf_token %}
+             <table class="table table-bordered" style="margin:auto;width: 70%;">
+                <tr>
+                    <td class="text-light">Select Response</td>
+                    <td>
+                        <select class="form-control text-light" name="responsetype">
+                            <option value="Feedback">Feedback</option>
+                            <option value="Complaint">Complaint</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Enter Subject</td>
+                    <td>
+                        <input type="text" name="subject" class="form-control text-light" required/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Enter your Response</td>
+                    <td>
+                        <textarea name="responsetext" lass="form-control text-light" required></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                     <td>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </td>
+                </tr>
+            </table>
+            </form>  
+        </div>
+    </div>
+{% endblock body %}

@@ -1,0 +1,50 @@
+{% extends "customerparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 style="text-align:center;">do you want to see your profile , hmm??</h1>  
+            <form method="post" class="form-group">
+
+                {% csrf_token %}
+
+                <table class="table text-light" style="margin: auto; width: 60%;">
+<tr>
+    <td>Name</td>
+    <td> <input type="text" name="name" class="form-control" value="{{cust.name}}"></td>
+</tr>
+
+
+<tr>
+    <td>Gender</td>
+    <td> <input type="text" name="gender" class="form-control" value="{{cust.gender}}"></td>
+</tr>
+
+<tr>
+    <td>Address</td>
+    <td>
+        <textarea name="address" class="form-control text-light">{{cust.address}}</textarea>
+    </td>
+</tr>
+
+<tr>
+    <td>contactno</td>
+    <td> <input type="number" name="contactno" class="form-control" value="{{cust.contactno}}" /></td>
+</tr>
+
+<tr>
+    <td>Email Address
+    </td>
+    <td> <input type="text" name="emailaddress" class="form-control" value="{{cust.emailaddress}}"></td>
+</tr>
+
+<tr>
+    <td></td>
+    <td>
+        <button type="submit" class="btn btn-success">Update</button>
+    </td>
+</tr>
+                </table>
+            </form> 
+        </div>
+    </div>
+{% endblock body %}
